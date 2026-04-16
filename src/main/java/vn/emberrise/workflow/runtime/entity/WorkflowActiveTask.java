@@ -3,6 +3,7 @@ package vn.emberrise.workflow.runtime.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import vn.emberrise.workflow.definition.constant.TaskStatus;
 
 import java.time.LocalDateTime;
 
