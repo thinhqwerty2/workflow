@@ -32,4 +32,5 @@ public class WorkflowInstance {
     private Map<String, Object> contextData = new HashMap<>();
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private LocalDateTime endTime;
 }

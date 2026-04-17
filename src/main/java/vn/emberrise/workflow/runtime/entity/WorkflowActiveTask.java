@@ -19,6 +19,6 @@ public class WorkflowActiveTask {
     private Long instanceId;
     private Long nodeId;
     @Enumerated(EnumType.STRING)
-    private TaskStatus status; // PENDING, IN_PROGRESS
+    private TaskStatus status; // PENDING, IN_PROGRESS, COMPLETED
     private LocalDateTime createdAt;
 }

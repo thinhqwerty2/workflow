@@ -18,4 +18,6 @@ public interface WorkflowEdgeRepository extends JpaRepository<WorkflowEdge, Long
 
     // Tìm tất cả các cạnh nối đến một nút (Dùng cho logic JOIN)
     List<WorkflowEdge> findByToNodeId(Long toNodeId);
+
+    List<WorkflowEdge> findAllByFromNodeId(Long fromNodeId);
 }

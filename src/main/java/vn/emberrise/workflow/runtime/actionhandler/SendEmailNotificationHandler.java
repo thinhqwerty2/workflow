@@ -10,20 +10,18 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class SendEmailNotificationHandler implements ActionHandler {
 
-    private final EmailService emailService;
 
     @Override
     public void execute(WorkflowInstance instance, Map<String, String> configs, Map<String, Object> context) {
         // 1. Lấy config từ node định nghĩa
         String templateId = configs.get("template_id");
-        
+
         // 2. Lấy dữ liệu thực tế từ context (EAV)
         String patientName = (String) context.get("patient_name");
         String result = (String) context.get("lab_result");
 
         // 3. Thực hiện logic nghiệp vụ
-        emailService.send(templateId, patientName, result);
-        
+        System.out.println(patientName + result);
     }
 
     @Override

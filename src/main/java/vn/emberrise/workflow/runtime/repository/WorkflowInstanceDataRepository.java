@@ -18,8 +18,12 @@ public interface WorkflowInstanceDataRepository extends JpaRepository<WorkflowIn
             join WorkflowInstance wi on wi.id = d.instanceId
             WHERE d.dataKey = :key AND d.dataValue = :value
             """)
-    List<WorkflowInstance> findByAttribute(String key, String value);
+    List<WorkflowInstance> findByStringAttribute(String key, String value);
 
     // Xóa/Cập nhật dữ liệu context khi quy trình chạy
     Optional<WorkflowInstanceData> findByInstanceIdAndDataKey(Long instanceId, String dataKey);
+
+    List<WorkflowInstanceData> findByInstanceId(Long instanceId);
+
+    List<WorkflowInstanceData> findAllByInstanceIdAndDataKey(Long instanceId, String dataKey);
 }

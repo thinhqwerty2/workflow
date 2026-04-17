@@ -2,12 +2,16 @@ package vn.emberrise.workflow.definition.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "wf_node_config")
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 public class WorkflowNodeConfig {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

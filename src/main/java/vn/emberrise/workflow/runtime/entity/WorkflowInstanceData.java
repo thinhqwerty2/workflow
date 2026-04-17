@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import vn.emberrise.workflow.runtime.constant.JsonDataType;
 
 @Entity
 @Table(name = "wf_instance_data")
@@ -20,6 +21,17 @@ public class WorkflowInstanceData {
     private Long instanceId;
 
     private String dataKey;   // vd: "order_id"
-    private String dataValue; // Lưu tất cả dưới dạng String
-    private String dataType;  // vd: "NUMBER", "STRING", "BOOLEAN" để convert ngược lại Java
+
+    private String dataValue;
+
+    @Enumerated(EnumType.STRING)
+    private JsonDataType dataType;  // vd: "NUMBER", "STRING", "BOOLEAN","OBJECT","ARRAY" để convert ngược lại Java
+
+    private String stringValue;
+    private Double doubleValue;
+    private Boolean booleanValue;
+
+    private Integer arrayIndex;
+
+    private Long byteArrayId;
 }

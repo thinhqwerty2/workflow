@@ -7,9 +7,10 @@ spring:
       naming:
         implicit-strategy: org.springframework.boot.hibernate.SpringImplicitNamingStrategy
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        default_schema: workflow
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=workflow
+    url: jdbc:postgresql://localhost:5432/workflow?currentSchema=workflow
     username: workflow
     password: workflow
-    dbcp2:
-      default-schema: workflow
